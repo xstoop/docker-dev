@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+    php:
+        image: php:7.1-fpm
+        container_name: php
+        volumes:
+            - ~/webroot/test:/var/www/html
+        restart: always
+
+    nginx:
+        image: nginx:alpine
+        container_name: nginx
+        volumes:
+            - ./etc/nginx/conf.d:/etc/nginx/conf.d
+            - ./var/nginx/log:/var/log/nginx
+            - ~/webroot/test:/var/www/html
+        ports:
+            - "80:80"
+            - "443:443"
+        links:
+            - php
+        restart: always
