@@ -2,7 +2,7 @@ version: '2'
 
 services:
     php:
-        image: php:7.1-fpm
+        build: ./images/php
         container_name: php
         volumes:
             - ~/webroot/test:/var/www/html
