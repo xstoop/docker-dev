@@ -1,0 +1,17 @@
+server {
+    listen 8001;
+    server_name  _;
+
+    location = /phpstatus
+    {
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $fastcgi_script_name;
+    }
+
+    location = /nginxstatus
+    {
+        stub_status on;
+        access_log off;
+    }
+}
