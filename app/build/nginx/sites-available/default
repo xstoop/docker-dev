@@ -1,7 +1,7 @@
 server {
        listen 80 default_server;
 
-       root /var/www/html/icproxy/public;
+       root /var/www/html/project/public;
        index index.php;
 
        charset utf-8;
