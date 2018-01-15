@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 登录阿里云docker repository
-docker login --username=username --password=password registry.cn-hangzhou.aliyuncs.com
+docker login --username=username --password=password --email=email registry.cn-hangzhou.aliyuncs.com
 
 # 记录上一个版本
 echo 'record the last previous version use tag older ..'

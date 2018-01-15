@@ -4,7 +4,7 @@
 docker build -f Dockerfile --tag appbaseimage:latest .
 
 #登录阿里云docker repository
-docker login --username=username --password=password --mail=mail registry.cn-hangzhou.aliyuncs.com
+docker login --username=username --password=password --email=email registry.cn-hangzhou.aliyuncs.com
 
 #推送镜像
 sudo docker push registry.cn-hangzhou.aliyuncs.com/namespace/appbaseimage:latest
