@@ -26,6 +26,8 @@ services:
         build: ./images/php
         container_name: php
         volumes:
+            - ./etc/php/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf
+            - ./etc/php/php-fpm.conf:/usr/local/etc/php-fpm.conf   
             - ~/webroot/test:/var/www/html
         links:
             - memcached
